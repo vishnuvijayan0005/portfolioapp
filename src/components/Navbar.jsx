@@ -11,7 +11,7 @@ export default function Navbar() {
         {/* Left side - Logo & Name */}
         <div className="flex items-center gap-3">
           <img
-            src="https://via.placeholder.com/40"
+            src="./logo.webp"
             alt="Logo"
             className="w-10 h-10 rounded-full"
           />
