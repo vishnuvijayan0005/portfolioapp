@@ -2,20 +2,42 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center p-6">
-      <div className="bg-white/10 backdrop-blur-lg p-10 rounded-2xl shadow-xl text-center text-white max-w-2xl">
-        <h1 className="text-5xl font-bold mb-4">Hi, I'm Vishnu Vijayan 👋</h1>
-        <p className="text-lg mb-6">
-          A passionate developer creating modern and responsive web
-          applications. I love turning ideas into real-world projects with clean
-          and functional code.
-        </p>
-        <Link
-          to="/projects"
-          className="bg-yellow-400 text-gray-900 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-300 transition duration-300"
-        >
-          View My Projects
-        </Link>
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-6">
+      <div className="max-w-5xl w-full flex flex-col md:flex-row items-center gap-12">
+        {/* Left Section - Text */}
+        <div className="flex-1 text-center md:text-left text-white">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+            Hi, I'm <span className="text-indigo-400">Vishnu Vijayan</span> 👋
+          </h1>
+          <p className="text-lg text-gray-300 mb-6">
+            Full-Stack Developer passionate about building modern, responsive,
+            and user-friendly web applications. I specialize in creating
+            seamless digital experiences from concept to deployment.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <Link
+              to="/projects"
+              className="bg-indigo-500 hover:bg-indigo-400 text-white font-medium px-6 py-3 rounded-lg transition duration-300 shadow-lg"
+            >
+              View My Projects
+            </Link>
+            <Link
+              to="/contact"
+              className="border border-gray-400 text-gray-200 hover:bg-gray-800 font-medium px-6 py-3 rounded-lg transition duration-300"
+            >
+              Contact Me
+            </Link>
+          </div>
+        </div>
+
+        {/* Right Section - Image */}
+        <div className="flex-1 flex justify-center">
+          <img
+            src="./portpic.JPG"
+            alt="Vishnu Vijayan"
+            className="rounded-full border-4 border-indigo-500 shadow-lg w-64 h-64 object-cover"
+          />
+        </div>
       </div>
     </div>
   );

@@ -1,34 +1,52 @@
 export default function Education() {
+  const education = [
+    {
+      title: "B.Tech in Computer Science",
+      year: "2021 - 2025",
+      institution: "M Dasan Institute of Technology",
+      image: "./garduat1.jpg",
+    },
+    {
+      title: "Higher Secondary",
+      year: "2019 - 2021",
+      institution: "SGMGHSS Kolathur",
+      image: "./edu2.jpg",
+    },
+    {
+      title: "SSLC",
+      year: "2019",
+      institution: "SGMGHSS Kolathur",
+      image: "edu1.jpg",
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-800 to-indigo-900 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-6">
       <div className="flex flex-col md:flex-row gap-8">
-        {/* College Section */}
-        <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl max-w-sm text-center text-white">
-          <h2 className="text-2xl font-bold mb-3">
-            B.Tech in Computer Science
-          </h2>
-          <p className="text-yellow-300 mb-2">2021 - 2025</p>
-          <ul className="space-y-2 text-lg">
-            <li>M Dasan Institute of Technology</li>
-          </ul>
-        </div>
+        {education.map((edu, index) => (
+          <div
+            key={index}
+            className="bg-gray-800 rounded-2xl shadow-lg border border-gray-700 
+                       hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 
+                       max-w-sm overflow-hidden text-center text-white"
+          >
+            {/* Education Image */}
+            <img
+              src={edu.image}
+              alt={edu.title}
+              className="w-full h-40 object-cover"
+            />
 
-        {/* School Section */}
-        <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl max-w-sm text-center text-white">
-          <h2 className="text-2xl font-bold mb-3">Higher Secondary </h2>
-
-          <div className="mb-4">
-            <p className="text-yellow-300 mb-2">2019 - 2021</p>
-            <p>SGMGHSS Kolathur</p>
+            {/* Education Details */}
+            <div className="p-6">
+              <h2 className="text-2xl font-bold mb-2 text-indigo-400">
+                {edu.title}
+              </h2>
+              <p className="text-gray-300 mb-2">{edu.year}</p>
+              <p className="text-gray-200">{edu.institution}</p>
+            </div>
           </div>
-        </div>
-        <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl max-w-sm text-center text-white">
-          <h2 className="text-2xl font-bold mb-3">SSLC</h2>
-          <div>
-            <p className="text-yellow-300 mb-2">2019</p>
-            <p>SGMGHSS Kolathur</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
